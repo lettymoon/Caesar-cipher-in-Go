@@ -83,5 +83,4 @@ func main() {
 		decryptMessage := caesarDecrypt(*messageFlag, *keyFlag)
 		fmt.Println(decryptMessage)
 	}
-
 }
