@@ -11,7 +11,7 @@ func caesarEncrypt(message string, key int) string {
 }
 
 func caesarDecrypt(message string, key int) string {
-	return originalText(message, key)
+	return shiftText(message, -key)
 }
 
 func shiftText(text string, key int) string {
@@ -22,34 +22,15 @@ func shiftText(text string, key int) string {
 			if unicode.IsLower(char) {
 				offset = rune('a')
 			}
-			charShifted := (char - offset + rune(key)) % 26 + offset
+			adjustedShifted := char - offset + rune(key)
+			if adjustedShifted < 0 {
+				adjustedShifted = 26 - (adjustedShifted * -1)
+			}
+			charShifted := adjustedShifted % 26 + offset
 			result += string(charShifted)
 		}else {
 			result += string(char)
 		}
-	}
-	return result
-}
-
-func originalText(text string, key int) string{
-	var result string
-	for _, char := range text{
-		if unicode.IsLetter(char){
-			offset := rune('A')
-			if unicode.IsLower(char){
-				offset = rune('a')
-			}
-			x := char - offset - rune(key)
-			if x < 0{
-				x = 26 - x + offset
-				result += string(x)
-			}else {
-				charShifted := x % 26 + offset
-				result += string(charShifted)
-			}
-		}else{
-			result += string(char)
-		}	
 	}
 	return result
 }	
