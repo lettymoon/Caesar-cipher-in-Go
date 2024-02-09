@@ -49,9 +49,10 @@ func main() {
 	
 	if *messageFlag == "" || *helpFlag == true{
 		fmt.Println("Using: go run caesar-cipher.go [option]")
-		fmt.Println("-e, -encrypt     encrypt the message")
-		fmt.Println("-d, -decrypt     decrypt the message")
-		fmt.Println("-k,  -key        key that will be used to encrypt and decrypt the message, if not selected, key 13 will be used as default")
+		fmt.Println("-e\t -encrypt\t encrypt the message")
+		fmt.Println("-d\t -decrypt\t decrypt the message")
+		fmt.Println("-k\t -key\t\t key that will be used to encrypt and decrypt the message, if not selected, key 13 will be used as default")
+		fmt.Println("-m\t -message\t\t message that will be encrypted")
 		return
 	}
 	if *encryptFlag {
