@@ -1,4 +1,4 @@
-# Caesar Chipar in Golang
+# Caesar Chiper in Golang
 
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 
@@ -16,5 +16,5 @@ Options:
 -e (encrypt) encrypt the message
 -d (decrypt) decrypt the message
 -k (key) key that will be used to encrypt and decrypt the message, if not selected, key 13 will be used as default
--m (message) message that will be encrypted
+-m (message) message that will be encrypted or decrypted
 ```
